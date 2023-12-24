@@ -86,26 +86,6 @@ double total_perimeter(const Shapes& shapes)
 	return sum;
 }
 
-// following notes are from the reference.
-// visitor pattern is used when type addition is closed but operation addition is open.
-// procedural programming is good at adding operations.
-// this solution exploits that fact.
-// variant takes up the space needed by the largest object ...
-// ... so care must be taken.
-// this approach is nonintrusive, that is, it does not require ...
-// ... any change in the classes Circle, Square etc.
-// no need to have a abstract base class or any virtual functions.
-// no need to use unique_ptr as in classic.cpp unless there is a problem ...
-// ... with size of std::variant (Shape) object (too large). then, pointers, ...
-// ... or proxy object can be used inside std::variant
-// no need to implement an alternative operator() for every class ...
-// .. because there is no base class / are no pure virtual functions.
-// return type can be customised because it is not determined ...
-// ... by the abstract class anymore. 
-// instead of std::visit, std::get_if with lots of if, else if statements ...
-// ... could be used to improve performance. However, that would decrease ...
-// ... maintainability, readability etc.
-
 int main()
 {
 	Shapes shapes;
