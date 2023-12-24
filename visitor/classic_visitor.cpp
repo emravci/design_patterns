@@ -126,21 +126,6 @@ double total_perimeter(const Shapes& shapes)
 	return sum;
 }
 
-// following notes are from the reference.
-// visitor pattern is used when type addition is closed but operation addition is open.
-// with the addition of accept function, now it is easy to add operations.
-// one weakness is that even if the implemantation is same for different shapes, ...
-// ... visit functions for different shapes need to be implemented ...
-// ... for instance, Translate visitor would be same for all Shapes.
-// another is return type of visit function is determined in the base class (ShapeVisitor here) ...
-// ... common approach (as implemented here) is to store the result in the visitor and access later.
-// another disadvantage is that it becomes difficult to add new types.
-// another one is the intrusive nature of implementation ...
-// ... in order to employ this implementation of visitor pattern ...
-// ... accept function needs to be added to Shape class and deriving Shapes.
-// if another layer is added to Shapes and accept is forgotten to be overridden ...
-// ... visitor would be applied to wrong types.
-
 int main()
 {
 	Shapes shapes;
