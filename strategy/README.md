@@ -8,4 +8,5 @@ With strategy, it is still difficult to add new operations but it is easier to a
 * It lacks flexibility to adapt strategy at runtime.
 * There is one instantiation of Shape family classes for each Strategy, Circle<SteelCostStrategy> for instance.
 * Class templates usually completely reside in header files. Therefore, opportunity to hide implementation details in source files might be lost.
+* Strategy family classes do not need a base class anymore.
 * This implementation does not suffer from performance penalty of the classic implementation. 
