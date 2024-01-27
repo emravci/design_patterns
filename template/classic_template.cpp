@@ -55,15 +55,15 @@ double SimpleSum::doEvaluate(long long index) const
 	return index;
 }
 
-class SquarredSum : public Sum
+class SquaredSum : public Sum
 {
 	public:
-	SquarredSum(long long begin, long long closedEnd, long long increment) : Sum{begin, closedEnd, increment} {}
+	SquaredSum(long long begin, long long closedEnd, long long increment) : Sum{begin, closedEnd, increment} {}
 	private:
 	virtual double doEvaluate(long long) const override;
 };
 
-double SquarredSum::doEvaluate(long long index) const
+double SquaredSum::doEvaluate(long long index) const
 {
 	return index * index;
 }
@@ -85,8 +85,8 @@ int main()
 {
 	SimpleSum simpleSum{1, 5, 1};
 	std::cout << simpleSum.evaluate() << "\n";
-	SquarredSum squarredSum{1, 5, 1};
-	std::cout << squarredSum.evaluate() << "\n";
+	SquaredSum squaredSum{1, 5, 1};
+	std::cout << squaredSum.evaluate() << "\n";
 	LeibnitzSum piOverEight(1, 5000, 4);
 	std::cout << piOverEight.evaluate() * 8 << "\n";
 	return 0;
